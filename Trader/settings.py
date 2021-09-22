@@ -17,6 +17,8 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 # Templates Directory
 TEMPLATE_DIR = BASE_DIR / 'Templates'
+
+# Media Directory
 MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = "/media/"
 
