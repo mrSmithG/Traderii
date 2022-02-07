@@ -43,8 +43,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'about', 
+
+    # local
+    'about.apps.AboutConfig',
+    'users.apps.UsersConfig', 
 ]
+
+AUTH_USER_MODEL = 'users.CustomUser'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -54,6 +59,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # Custom
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
@@ -131,6 +138,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     BASE_DIR / 'static',
 )
+
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 

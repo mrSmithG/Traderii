@@ -1,0 +1,13 @@
+.vscode/
+
+traderii/
+
+db.sqlite3/
+
+manage.py
+
+Trader/__pycache__
+
+users/__pycache__
+
+about/__pycache__/

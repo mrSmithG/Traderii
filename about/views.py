@@ -1,5 +1,7 @@
+from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
 from about import forms
+from .models import ProductImage
 
 # Create your views here.
 class ContactUsView(FormView):
@@ -11,3 +13,7 @@ class ContactUsView(FormView):
         form.send_mail()
         return super().form_valid(form)
 
+"""class HomePageView(TemplateView):
+    template_name = "homepage.html"
+    model = ProductImage
+    """

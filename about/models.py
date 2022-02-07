@@ -1,6 +1,7 @@
 from django.db import models
 
 # Create your models here.
+
 class Product(models.Model):
     name = models.CharField(max_length=32)
     description = models.TextField(blank=True)
@@ -9,12 +10,14 @@ class Product(models.Model):
     active = models.BooleanField(default=True)
     in_Stock = models.BooleanField(default=True)
     date_Updated = models.DateTimeField(auto_now=True)
+    
 
 
 class ProductImage(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    Image = models.ImageField(upload_to = "product-images")
+    image = models.ImageField(upload_to = "product-images")
     thumbnail = models.ImageField(upload_to="product-thumbnails", null=True)
+    
 
 
 class ProductTag(models.Model):

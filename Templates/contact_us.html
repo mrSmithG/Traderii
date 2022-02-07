@@ -11,7 +11,7 @@
 	    id="id_name"
 	    name="name"
 	    placeholder="Your name"
-	    value=" {{ form.name.value|default:"" }}">
+	    value="{{ form.name.value|default:"" }}">
 	 {% if form.name.errors %}
 	   <div class="invalid-feedback">
 	      {{ form.name.errors }}
