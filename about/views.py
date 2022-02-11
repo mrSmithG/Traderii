@@ -13,7 +13,13 @@ class ContactUsView(FormView):
         form.send_mail()
         return super().form_valid(form)
 
-"""class HomePageView(TemplateView):
+class HomePageView(TemplateView):
     template_name = "homepage.html"
-    model = ProductImage
-    """
+    model = Product
+    context_object_name = 'product_detail'
+
+class ProductDetailView(DetailView):
+    pass 
+
+class PurchaseProductView(DetailView):
+    pass    

@@ -46,6 +46,10 @@ class CartItem(models.Model):
     quantity_ordered = models.IntegerField(default=1)
     ordered = models.BooleanField(default=True)
 
+    def add_item_to_cart(product, quantity_ordered, ordered): ####
+
+
+
     def __str__(self):
         return f"{self.quantity} of {self.product}"
 
@@ -56,6 +60,7 @@ class Cart(models.Model):
     start_date = models.DateTimeField(auto_now_add=True)
     ordered_date = models.DateTimeField()
     ordered = models.BooleanField(default=False)
+
 
     def __str__(self):
         return f"{self.user}'s + cart"

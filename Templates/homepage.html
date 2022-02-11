@@ -1,5 +1,36 @@
 {% extends "base.html" %}                        
-{% block content %}
- <h2>Home</h2>                                     <p>Get new offers on Traderii</p>
- {% endblock content %}
+<!-- templates/home.html-->
+ 
+{% block title %} Home {% endblock title %} 
+
+
+{% block content %} 
+<div class="">
+{% if user.is_authenticated %} 
+    <a href="{% url 'logout' %}">Log out</a>
+    <p> Hi, {{ user.username }} !</p>
+{% else %} 
+    <a href="{% url 'login' %}">Log In</a>
+    <a href="{% url 'signup' %}">Sign Up</a>
+    <p>Welcome guest, check this page for available products and services </p>
+{% endif %}
+</div>
+<div class=""> 
+    {% for product in object_list %}
+       <div class="">
+         <ul>
+           <li><b>{{ product.name }}</b></li>
+           {% for item in product.category.all %}
+              <span>{{ item.name }}</span>
+           {% endfor %}
+           <li>Price: {{ product.price }}</li>
+           <li>Description: {{ product.description }}</li>
+           <li>Date added: {{ product.date_added }}</li>
+          </ul>
+       </div>
+    {% endfor %}
+</div>
+
+{% endblock content %} 
+
 
